@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #ff3cac, #784ba0 50%, #2b86c5);
+  background-attachment: fixed;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  border-radius: 28px;
+  background: rgba(20, 10, 40, 0.75);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.display {
+  min-height: 110px;
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #12002b, #2a0a52);
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.history {
+  min-height: 22px;
+  font-size: 1rem;
+  color: #b8a1ff;
+  word-break: break-all;
+}
+
+.current {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #fff;
+  word-break: break-all;
+  text-shadow: 0 0 14px rgba(0, 229, 255, 0.6);
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.key {
+  height: 64px;
+  border: none;
+  border-radius: 18px;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 0.08s, box-shadow 0.08s, filter 0.2s;
+}
+
+.key:hover {
+  filter: brightness(1.15);
+}
+
+.key:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.key:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.num {
+  background: linear-gradient(145deg, #3a86ff, #5f5bff);
+}
+
+.op {
+  background: linear-gradient(145deg, #ff9f1c, #ff5e00);
+}
+
+.op.active {
+  background: #fff;
+  color: #ff5e00;
+}
+
+.func {
+  background: linear-gradient(145deg, #00e5a0, #00b4d8);
+  color: #062a3a;
+}
+
+.equals {
+  grid-column: span 2;
+  background: linear-gradient(145deg, #ff3cac, #ff0a54);
+}
+
+.zero {
+  grid-column: span 1;
+}
+
+@media (max-width: 380px) {
+  .key { height: 56px; font-size: 1.2rem; }
+  .current { font-size: 2.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key { transition: none; }
+}
